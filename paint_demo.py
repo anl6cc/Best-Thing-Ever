@@ -2,15 +2,21 @@ from Tkinter import *
 
 b1 = "up"
 xold, yold = None, None
+color='blue'
 
 def main():
     root = Tk()
+    root.button = Button(root,text="Button",command=go)
+    root.button.pack(side="top")
     drawing_area = Canvas(root)
     drawing_area.pack()
     drawing_area.bind("<Motion>", motion)
     drawing_area.bind("<ButtonPress-1>", b1down)
     drawing_area.bind("<ButtonRelease-1>", b1up)
     root.mainloop()
+
+def go():
+    print("LOL");
 
 def b1down(event):
     global b1
@@ -27,7 +33,7 @@ def motion(event):
     if b1 == "down":
         global xold, yold
         if xold is not None and yold is not None:
-            event.widget.create_line(xold,yold,event.x,event.y,smooth=TRUE)
+            event.widget.create_line(xold,yold,event.x,event.y,fill=color,smooth=TRUE)
                           # here's where you draw it. smooth. neat.
         xold = event.x
         yold = event.y
