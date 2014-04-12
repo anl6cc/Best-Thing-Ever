@@ -7,7 +7,7 @@ color = 'black'
 def main():
     root = Tk()
 #    Label(bg='#234').grid(row=1,column=1)
-    btn = Button(root,text='black',command=black,bg='#234').grid(row=1,column=1)
+    btn = Button(root,text="     ",command=black,bg='black',activebackground='black').grid(row=1,column=1)
  #   btn.configure(bg='blue')
     Button(root,text="Red",command=red).grid(row=1,column=2)
     Button(root,text="Blue",command=blue).grid(row=1,column=3)
