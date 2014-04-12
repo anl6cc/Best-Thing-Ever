@@ -2,11 +2,13 @@ from Tkinter import *
 
 b1 = "up"
 xold, yold = None, None
-color='blue'
+color = 'blue'
 
 def main():
     root = Tk()
-    root.button = Button(root,text="Button",command=go)
+    root.button = Button(root,text="Red",command=red)
+    root.button.pack(side="top")
+    root.button = Button(root,text="Black",command=black)
     root.button.pack(side="top")
     drawing_area = Canvas(root)
     drawing_area.pack()
@@ -15,8 +17,12 @@ def main():
     drawing_area.bind("<ButtonRelease-1>", b1up)
     root.mainloop()
 
-def go():
-    print("LOL");
+def red():
+    print("LOL")
+    color = 'red'
+
+def black():
+    color = 'black'
 
 def b1down(event):
     global b1
